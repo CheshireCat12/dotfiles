@@ -1,0 +1,142 @@
+@import "mocha.css";
+
+* {
+  font-family: "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+window#waybar {
+  background: transparent;
+  color: @text;
+  margin: 5px 5px;
+}
+
+tooltip {
+  background: @surface0;
+  color: @text;
+  font-size: 13px;
+  border-radius: 1rem;
+  border: 2px solid @flamingo;
+}
+
+#workspaces {
+  border-radius: 1rem 0rem 0rem 1rem;
+  margin: 2px 0px 0px 5px;
+  background-color: @surface0;
+}
+
+#workspaces button {
+  color: @lavender;
+  border-radius: 1rem;
+  /*padding: 0.4rem;*/
+}
+
+#workspaces button:hover {
+  color: @sky;
+  border-radius: 1rem;
+}
+
+#workspaces button.active {
+  color: @sapphire;
+  border-radius: 1rem;
+}
+
+#window,
+#wireplumber,
+#battery,
+#cpu,
+#memory,
+#network,
+#tray,
+#clock {
+  background-color: @surface0;
+  padding: 0rem 1rem;
+  margin-top: 2px;
+}
+
+#window {
+  border-radius: 0rem 1rem 1rem 0rem;
+}
+
+/* Make the background transparent when no window is loaded*/
+window#waybar.empty #window {
+  background-color: transparent;
+}
+/* Make the rounded border of workspaces when no window is loaded*/
+window#waybar.empty #workspaces {
+  border-radius: 1rem;
+}
+
+#clock {
+  color: @flamingo;
+  border-radius: 1rem;
+}
+
+#wireplumber {
+  color: @green;
+  border-radius: 1rem 0px 0px 1rem;
+}
+
+#wireplumber.loud {
+  color: @peach;
+}
+
+#wireplumber.too_loud {
+  color: @red;
+}
+
+#wireplumber.muted {
+  color: @red;
+}
+
+#battery {
+  color: @green;
+}
+
+#battery.charging,
+#battery.plugged {
+  color: @green;
+}
+
+#battery.warning {
+  color: @peach;
+}
+
+#battery.critical:not(.charging) {
+  color: @red;
+}
+
+#cpu {
+  color: @green;
+}
+
+#cpu.critical {
+  color: @red;
+}
+
+#memory {
+  color: @green;
+}
+
+#memory.not_optimal {
+  color: @peach;
+}
+
+#memory.critical {
+  color: @red;
+}
+
+#network {
+  color: @green;
+}
+
+#network.disconnected {
+  color: @red;
+}
+
+#tray {
+  border-radius: 0rem 1rem 1rem 0rem;
+  margin-right: 5px;
+  color: #000000;
+}

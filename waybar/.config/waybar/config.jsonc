@@ -1,0 +1,125 @@
+// -*- mode: jsonc -*-
+{
+    "height": 36, // Waybar height (to be removed for auto height)
+    "spacing": 0, // Gaps between modules (0px)
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "wireplumber",
+        "battery",
+        "cpu",
+        "memory",
+        "network",
+        "tray",
+    ],
+    // Modules configuration
+    // Module Left
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "format-icons": {
+            "default": "",
+        },
+    },
+    // Module Center
+    "hyprland/window": {
+        "format": "{initialTitle}",
+        "icon": true,
+        "icon-size": 14,
+        "tooltip": false,
+    },
+    // Module Right
+    "wireplumber": {
+        "states": {
+            "loud": 80,
+            "too_loud": 100,
+        },
+        "max-volume": 120,
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "on-click": "helvum",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ],
+        "tooltip": false,
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 20,
+        },
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+    },
+    "cpu": {
+        "states": {
+            "critical": 60,
+        },
+        "format": " {usage}%",
+        "tooltip": false,
+    },
+    "memory": {
+        "states": {
+            "not_optimal": 60,
+            "critical": 80,
+        },
+        "format": " {}%",
+    },
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": " {ifname}",
+        "tooltip-format": "{essid} via {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "⚠ Disconnected",
+        "format-alt": "  {bandwidthDownBits}  {bandwidthUpBits} ",
+        "interval": 30,
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10,
+    },
+    "clock": {
+        "format": " {:%d/%m -  %H:%M}",
+        "on-click": "/usr/local/bin/ags -t ActivityCenter",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "interval": 30,
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b>{}</b></span>",
+            },
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down",
+        },
+    },
+}
