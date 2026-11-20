@@ -87,4 +87,8 @@ Packages are stowed with `--no-folding`, so several packages can share
 
 ## TODO
 
-- [ ] Battery on waybar: red and a notification when the battery is under 20%
+- [ ] check quickshell to unify hyprland
+- [ ] check herdr
+- [ ] check yazi
+- [ ] try to unify keybindings
+- [ ] update nvim config
